@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    # --------- Geral -------------
+
+    <color name="toolbar">#186096</color>
+    <color name="status_bar">#00386</color>
+    <color name="fundo_tela_com_cards">#F1F1F1</color>
+    <color name="fundo_cards">@color/white</color>
+    <color name="bottom_navigation">#186096</color>
+    <color name="icone_ativo_bottom">@color/white</color>
+    <color name="icone_inativo_bottom">#95B6CF</color>
+
+    # --------- Splash -------------
+
+    <color name="inicio_fundo">#186096</color>
+    <color name="final_fundo">#053F6A</color>
+
+    # --------- Menu principal -----------
+
+    <color name="icones_botoes">#00386C</color>
+    <color name="texto_botoes">#232323</color>
+    <color name="icones_conexoes">#727272</color>
+
+    # ---------- Dados do cliente -----------
+
+    <color name="textos">#000000</color>
+    <color name="label_dos_texto">#95989A</color>
+    <color name="razao_social">#606060</color>
+    <color name="botao_telefone">#186096</color>
+    <color name="email">#C1392B</color>
+    <color name="botao_verifica_status">#638735</color>
+
+    # --------- Status dos pedidos ---------
+
+    <color name="em_processamento">#95989A</color>
+    <color name="pedido_recusado">#FF9900</color>
+    <color name="pendente">#606060</color>
+    <color name="bloqueado">#3557AA</color>
+    <color name="liberado">#186096</color>
+    <color name="montado">#7FAA33</color>
+    <color name="faturado">#64863B</color>
+    <color name="cancelado">#E40613</color>
+    <color name="orcamento">#2D3E4E</color>
+
+    # --------- Tipos de crítica ----------
+
+    <color name="aguardando_retorno">#757575</color>
+    <color name="sucesso">#64863B</color>
+    <color name="falha_parcial">#FF9900</color>
+    <color name="falha_total">#E40613</color>
+
+    # --------- Legendas -------------
+
+    <color name="sofreu_corte">#FF9900</color>
+    <color name="falta">#BF595F</color>
+    <color name="cancelado_ERP">#E40613</color>
+    <color name="devolucao">#186096</color>
+    <color name="telemarketing">#64863B</color>
+
+    # -------- Alvarás --------------
+
+    <color name="fonte_alvara">#3E3E3E</color>
+
+</resources>
