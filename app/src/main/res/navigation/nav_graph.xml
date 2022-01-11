@@ -9,4 +9,9 @@
         android:name="br.com.iesb.maximaapp.view.fragments.DadosFragment"
         android:label="Dados do cliente"
         tools:layout="@layout/fragment_dados" />
+    <fragment
+        android:id="@+id/historicoFragment"
+        android:name="br.com.iesb.maximaapp.view.fragments.HistoricoFragment"
+        android:label="fragment_historico"
+        tools:layout="@layout/fragment_historico" />
 </navigation>

@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/dados_fragment"
+        android:id="@+id/dadosFragment"
         android:icon="@drawable/ic_maxima_pessoa"
         android:title="Dados"/>
 
     <item
-        android:id="@+id/historico_fragment"
+        android:id="@+id/historicoFragment"
         android:icon="@drawable/ic_maxima_historico_pedidos_ativo"
         android:title="Hist. Pedidos"/>
 
     <item
-        android:id="@+id/alvara_fragment"
+        android:id="@+id/alvaraFragment"
         android:icon="@drawable/ic_maxima_alvara_ativo"
         android:title="Alvarás"/>
 

@@ -3,15 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/bloqueado.xml" value="0.287109375" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/bottom_nav_color.xml" value="0.28378378378378377" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/cancelado.xml" value="0.287109375" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/card_client_background.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/divider_background.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/em_processo.xml" value="0.287109375" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/faturado.xml" value="0.287109375" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/liberado.xml" value="0.287109375" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/montado.xml" value="0.287109375" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/orcado.xml" value="0.287109375" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/pendente.xml" value="0.287109375" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/recusado.xml" value="0.287109375" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/drawable/splash_background.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/activity_clientes.xml" value="0.25" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/activity_menu_principal.xml" value="0.26744989633724947" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/content_main.xml" value="0.275" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/fragment_dados.xml" value="0.264453125" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/fragment_historico.xml" value="0.275" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/item_contatos.xml" value="0.275" />
+        <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/layout/item_historico.xml" value="0.275" />
         <entry key="..\:/Users/bastos.admin/StudioProjects/Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.275" />
         <entry key="..\:/Users/jfbas/AndroidStudioProjects/maximaApp/app/src/main/res/drawable/splash_background.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/jfbas/AndroidStudioProjects/maximaApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
