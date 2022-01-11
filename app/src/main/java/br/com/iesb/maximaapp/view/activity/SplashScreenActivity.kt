@@ -1,8 +1,10 @@
-package br.com.iesb.maximaapp.view.activitys
+package br.com.iesb.maximaapp.view.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import br.com.iesb.maximaapp.R
 
@@ -11,8 +13,13 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_sceen)
 
-        val handle = Handler()
-        handle.postDelayed({ Toast.makeText(this, "Teste", Toast.LENGTH_SHORT).show() }, 2000)
+        Handler(Looper.getMainLooper()).postDelayed({
+            vaiParaMenu()
+        },2000)
+    }
 
+    private fun vaiParaMenu(){
+        val intent = Intent(this, MenuPrincipalActivity::class.java)
+        startActivity(intent)
     }
 }

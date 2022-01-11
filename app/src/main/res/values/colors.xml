@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azul_mais_claro">#186096</color>
     <color name="azul_mais_escuro">#053F6A</color>
+    <color name="label_textos_color">#95989A</color>
+    <color name="bottom_navigation_background_color">#186096</color>
+    <color name="bottom_navigation_selected_color">#FFFFFF</color>
+    <color name="bottom_navigation_unselected_color">#95B6CF</color>
+    <color name="botao_verificar_status_color">#638735</color>
 
 
 
