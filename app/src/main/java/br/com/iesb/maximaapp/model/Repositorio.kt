@@ -4,7 +4,7 @@ import br.com.iesb.maximaapp.model.network.ChamadaApiSegura
 import br.com.iesb.maximaapp.model.network.MaximaApi
 import retrofit2.Response
 
-class RepositorioCliente(private val servico : MaximaApi) {
+class Repositorio(private val servico : MaximaApi) {
 
     suspend fun pegaClientes(): Response<PegaCliente> {
         return ChamadaApiSegura.requestSeguro {
@@ -12,6 +12,11 @@ class RepositorioCliente(private val servico : MaximaApi) {
         } ?: Response.error(1,null)
     }
 
+    suspend fun pegaPedidos(): Response<PegaPedido>{
+        return ChamadaApiSegura.requestSeguro {
+            servico.pegaPedidos()
+        } ?: Response.error(1, null)
+    }
 
 
 }

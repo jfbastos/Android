@@ -5,22 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import br.com.iesb.maximaapp.R
 import br.com.iesb.maximaapp.databinding.FragmentDadosBinding
 import br.com.iesb.maximaapp.model.Cliente
-import br.com.iesb.maximaapp.model.RepositorioCliente
+import br.com.iesb.maximaapp.model.Repositorio
 import br.com.iesb.maximaapp.model.network.InstanciaRetrofit
 import br.com.iesb.maximaapp.view.adapters.ContatosAdapter
 import br.com.iesb.maximaapp.viewmodel.ClienteViewModel
 import br.com.iesb.maximaapp.viewmodel.fabrica.FabricaClienteViewModel
 import com.google.android.material.snackbar.Snackbar
-import retrofit2.Retrofit
 import java.text.SimpleDateFormat
-import java.time.Instant
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class DadosFragment : Fragment() {
@@ -32,7 +26,7 @@ class DadosFragment : Fragment() {
     private lateinit var status : String
 
     private val viewModel : ClienteViewModel by lazy{
-        val viewModelProvider = FabricaClienteViewModel(repositorio = RepositorioCliente(InstanciaRetrofit.servicoApi))
+        val viewModelProvider = FabricaClienteViewModel(repositorio = Repositorio(InstanciaRetrofit.servicoApi))
         ViewModelProvider(this, viewModelProvider)[ClienteViewModel::class.java]
     }
     override fun onCreateView(

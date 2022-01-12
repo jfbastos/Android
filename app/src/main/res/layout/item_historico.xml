@@ -2,140 +2,164 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_margin="4dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:id="@+id/icone_status"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/cancelado"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="T" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false">
 
         <TextView
-            android:id="@+id/icone_status"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="8dp"
-            android:background="@drawable/cancelado"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="24sp"
+            android:id="@+id/pedido_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:fontFamily="@font/santral_bold"
+            android:text="Nº Ped. RCA/ERP:"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/cliente_label"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="T" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="7dp">
+        <TextView
+            android:id="@+id/numero_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/pedido_label"
+            app:layout_constraintStart_toEndOf="@+id/pedido_label"
+            tools:text="5.421.800.637 / 5.421.800.637" />
 
-            <TextView
-                android:id="@+id/pedido_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:fontFamily="@font/santral_bold"
-                android:text="Nº Ped. RCA/ERP:"
-                android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/cliente_label"/>
+        <TextView
+            android:id="@+id/cliente_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:text="Cliente: "
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/status"
+            app:layout_constraintStart_toStartOf="@id/pedido_label"
+            app:layout_constraintTop_toBottomOf="@id/pedido_label" />
 
-            <TextView
-                android:id="@+id/numero_pedido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                app:layout_constraintBottom_toBottomOf="@id/pedido_label"
-                app:layout_constraintStart_toEndOf="@+id/pedido_label"
-                tools:text="5.421.800.637 / 5.421.800.637" />
+        <TextView
+            android:id="@+id/cliente_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/cliente_label"
+            app:layout_constraintStart_toEndOf="@+id/cliente_label"
+            tools:text="123 de Oliveira 4" />
 
-            <TextView
-                android:id="@+id/cliente_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:text="Cliente: "
-                android:textSize="11sp"
-                app:layout_constraintBottom_toTopOf="@id/status"
-                app:layout_constraintStart_toStartOf="@id/pedido_label"
-                app:layout_constraintTop_toBottomOf="@id/pedido_label" />
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cliente_label"
+            app:layout_constraintTop_toBottomOf="@id/cliente_label"
+            tools:text="Processado" />
 
-            <TextView
-                android:id="@+id/cliente_nome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                app:layout_constraintBottom_toBottomOf="@id/cliente_label"
-                app:layout_constraintStart_toEndOf="@+id/cliente_label"
-                tools:text="123 de Oliveira 4" />
+        <TextView
+            android:id="@+id/critica_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:text="Crítica:"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="@id/cliente_label"
-                app:layout_constraintTop_toBottomOf="@id/cliente_label"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:text="Processado" />
+        <ImageView
+            android:id="@+id/critica"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_maxima_critica_sucesso"
+            app:layout_constraintBottom_toBottomOf="@id/critica_label"
+            app:layout_constraintStart_toEndOf="@id/critica_label" />
 
-            <TextView
-                android:id="@+id/critica_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:text="Crítica:"
-                android:textSize="11sp"
-                app:layout_constraintBottom_toBottomOf="@id/status"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/hora_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/numero_pedido"
+            tools:text="15:18" />
 
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_maxima_critica_sucesso"
-                app:layout_constraintBottom_toBottomOf="@id/critica_label"
-                app:layout_constraintStart_toEndOf="@id/critica_label" />
+        <ImageView
+            android:id="@+id/legenda_1"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginRight="2dp"
+            android:src="@drawable/ic_maxima_legenda_corte"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cliente_label"
+            app:layout_constraintEnd_toStartOf="@id/legenda_2" />
 
-            <TextView
-                android:id="@+id/hora_pedido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/numero_pedido"
-                tools:text="15:18" />
+        <ImageView
+            android:id="@+id/legenda_2"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginRight="2dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_maxima_legenda_corte"
+            app:layout_constraintBottom_toBottomOf="@id/cliente_label"
+            app:layout_constraintEnd_toStartOf="@id/legenda_3" />
 
-            <ImageView
-                android:id="@+id/legendas"
-                android:layout_width="14dp"
-                android:layout_height="14dp"
-                android:src="@drawable/ic_maxima_legenda_corte"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/cliente_label" />
+        <ImageView
+            android:id="@+id/legenda_3"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginRight="2dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_maxima_legenda_corte"
+            app:layout_constraintBottom_toBottomOf="@id/cliente_label"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/valor_pedido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/santral_bold"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/status"
-                tools:text="R$ 617,40" />
+        <TextView
+            android:id="@+id/valor_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/santral_bold"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/status"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="R$ 617,40" />
 
-<!--            <View-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="4dp"-->
-<!--                android:background="@drawable/divider_background"/>-->
+        <!--            <View-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="4dp"-->
+        <!--                android:background="@drawable/divider_background"/>-->
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

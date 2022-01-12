@@ -12,6 +12,11 @@
     <fragment
         android:id="@+id/historicoFragment"
         android:name="br.com.iesb.maximaapp.view.fragments.HistoricoFragment"
-        android:label="fragment_historico"
+        android:label="Hist. de pedidos"
         tools:layout="@layout/fragment_historico" />
+    <fragment
+        android:id="@+id/alvaraFragment"
+        android:name="br.com.iesb.maximaapp.view.fragments.AlvaraFragment"
+        android:label="fragment_alvara"
+        tools:layout="@layout/fragment_alvara" />
 </navigation>
