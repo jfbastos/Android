@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/alvaraFragment"
         android:name="br.com.iesb.maximaapp.view.fragments.AlvaraFragment"
-        android:label="fragment_alvara"
+        android:label="Alvarás"
         tools:layout="@layout/fragment_alvara" />
 </navigation>

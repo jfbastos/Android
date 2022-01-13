@@ -22,13 +22,15 @@ class DadosFragment : Fragment() {
 
     private var _binding: FragmentDadosBinding? = null
     private val binding: FragmentDadosBinding get() = _binding!!
-    private lateinit var adapter : ContatosAdapter
-    private lateinit var status : String
+    private lateinit var adapter: ContatosAdapter
+    private lateinit var status: String
 
-    private val viewModel : ClienteViewModel by lazy{
-        val viewModelProvider = FabricaClienteViewModel(repositorio = Repositorio(InstanciaRetrofit.servicoApi))
+    private val viewModel: ClienteViewModel by lazy {
+        val viewModelProvider =
+            FabricaClienteViewModel(repositorio = Repositorio(InstanciaRetrofit.servicoApi))
         ViewModelProvider(this, viewModelProvider)[ClienteViewModel::class.java]
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,7 +44,7 @@ class DadosFragment : Fragment() {
 
         viewModel.pegaClientes()
 
-        viewModel.clientesLiveData.observe(viewLifecycleOwner){
+        viewModel.clientesLiveData.observe(viewLifecycleOwner) {
             val cliente = it.cliente
 
             preencheCampos(cliente)
@@ -55,7 +57,8 @@ class DadosFragment : Fragment() {
             val sdf = SimpleDateFormat("dd/MM/yyyy hh:mm")
             val currentDate = sdf.format(Date())
 
-            Snackbar.make(requireView(), "$currentDate Status - $status",Snackbar.LENGTH_SHORT).setAction("FECHAR"){}.show()
+            Snackbar.make(requireView(), "$currentDate Status - $status", Snackbar.LENGTH_SHORT)
+                .setAction("FECHAR") {}.show()
         }
 
     }
@@ -75,6 +78,11 @@ class DadosFragment : Fragment() {
         adapter = ContatosAdapter()
         binding.clientesRv.adapter = adapter
         adapter.differ.submitList(cliente.contatos)
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        _binding = null
     }
 
 }
