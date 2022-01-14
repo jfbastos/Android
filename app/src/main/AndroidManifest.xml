@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.iesb.maximaapp">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".MyApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaximaApp">
         <activity
-            android:name=".view.activity.ClientesActivity"
-            android:theme="@style/Theme.MaximaApp"
+            android:name=".view.activity.ConfiguracaoActivity"
             android:exported="false" />
+        <activity
+            android:name=".view.activity.ClientesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaximaApp" />
         <activity
             android:name=".view.activity.MenuPrincipalActivity"
             android:exported="false" />
@@ -30,7 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
