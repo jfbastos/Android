@@ -5,18 +5,16 @@ import android.view.*
 import android.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import br.com.iesb.maximaapp.R
 import br.com.iesb.maximaapp.databinding.FragmentHistoricoBinding
 import br.com.iesb.maximaapp.model.Pedido
-import br.com.iesb.maximaapp.model.Repositorio
-import br.com.iesb.maximaapp.model.network.InstanciaRetrofit
 import br.com.iesb.maximaapp.view.adapters.PedidosAdapter
 import br.com.iesb.maximaapp.view.dialogs.LegendaFragment
 import br.com.iesb.maximaapp.viewmodel.ClienteViewModel
-import br.com.iesb.maximaapp.viewmodel.fabrica.FabricaClienteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HistoricoFragment : Fragment() {
 
     private var _binding: FragmentHistoricoBinding? = null
@@ -24,11 +22,7 @@ class HistoricoFragment : Fragment() {
     private lateinit var adapter: PedidosAdapter
     private var listaOrigital = listOf<Pedido>()
 
-    private val viewModel: ClienteViewModel by lazy {
-        val viewModelProvider =
-            FabricaClienteViewModel(repositorio = Repositorio(InstanciaRetrofit.servicoApi))
-        ViewModelProvider(this, viewModelProvider)[ClienteViewModel::class.java]
-    }
+    private val viewModel: ClienteViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +46,12 @@ class HistoricoFragment : Fragment() {
 
         configuraRecyclerView()
 
-        viewModel.pedidosLiveData.observe(viewLifecycleOwner) {
-            listaOrigital = it.pedidos
+        viewModel.pedidosLiveData.observe(viewLifecycleOwner) { listaPedidos ->
+            if(listaPedidos.isNullOrEmpty().not()){
+                listaOrigital = listaPedidos
 
-            adapter.differ.submitList(it.pedidos)
+                adapter.differ.submitList(listaPedidos)
+            }
         }
     }
 

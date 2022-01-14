@@ -8,7 +8,10 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import br.com.iesb.maximaapp.R
 import br.com.iesb.maximaapp.databinding.ActivityClientesBinding
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ClientesActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityClientesBinding

@@ -5,18 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import br.com.iesb.maximaapp.databinding.FragmentDadosBinding
 import br.com.iesb.maximaapp.model.Cliente
-import br.com.iesb.maximaapp.model.Repositorio
-import br.com.iesb.maximaapp.model.network.InstanciaRetrofit
 import br.com.iesb.maximaapp.view.adapters.ContatosAdapter
 import br.com.iesb.maximaapp.viewmodel.ClienteViewModel
-import br.com.iesb.maximaapp.viewmodel.fabrica.FabricaClienteViewModel
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+@AndroidEntryPoint
 class DadosFragment : Fragment() {
 
 
@@ -25,11 +25,7 @@ class DadosFragment : Fragment() {
     private lateinit var adapter: ContatosAdapter
     private lateinit var status: String
 
-    private val viewModel: ClienteViewModel by lazy {
-        val viewModelProvider =
-            FabricaClienteViewModel(repositorio = Repositorio(InstanciaRetrofit.servicoApi))
-        ViewModelProvider(this, viewModelProvider)[ClienteViewModel::class.java]
-    }
+    private val viewModel: ClienteViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,13 +40,11 @@ class DadosFragment : Fragment() {
 
         viewModel.pegaClientes()
 
-        viewModel.clientesLiveData.observe(viewLifecycleOwner) {
-            val cliente = it.cliente
-
-            preencheCampos(cliente)
-
-            status = cliente.status
-
+        viewModel.clientesLiveData.observe(viewLifecycleOwner) { cliente ->
+            cliente?.let {
+                preencheCampos(it)
+                status = cliente.status
+            }
         }
 
         binding.botaoStatus.setOnClickListener {

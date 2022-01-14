@@ -1,12 +1,17 @@
 package br.com.iesb.maximaapp.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.io.Serializable
+
 
 data class PegaCliente (
     val cliente: Cliente
-)
+) : Serializable
 
+@Entity(tableName = "cliente")
 data class Cliente (
-    val id: Long,
+    @PrimaryKey val id: Long,
     val codigo: String,
     val razao_social: String,
     val nomeFantasia: String,
@@ -15,7 +20,8 @@ data class Cliente (
     val endereco: String,
     val status: String,
     val contatos: List<Contato>
-)
+) : Serializable
+
 
 data class Contato (
     val nome: String,
@@ -27,7 +33,7 @@ data class Contato (
     val e_mail: String?,
     val data_nascimento: String,
     val dataNascimentoConjuge: String? = null
-)
+) : Serializable
 
 
 
